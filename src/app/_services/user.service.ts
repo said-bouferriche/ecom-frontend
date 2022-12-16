@@ -22,6 +22,20 @@ export class UserService {
     return this.httpclient.post(this.API_PATH + "/authenticate", loginData, {headers:this.requestHeader})
   }
 
+  public forUser(){
+    return this.httpclient.get(this.API_PATH + '/forUser',{
+      responseType: "text",
+    });
+  }
+
+  public forAdmin(){
+    return this.httpclient.get(this.API_PATH + '/forAdmin',{
+      responseType: "text",
+    });
+  }
+
+
+
   // @ts-ignore
   public roleMatch(allowedRoles: string | any[]) :boolean{
     let isMatch = false;
