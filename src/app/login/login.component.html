@@ -1,21 +1,51 @@
+
 <div class="container mt-5">
   <div class="card">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-      <input type="text"
-             ngModel
-             name="userName"
-             id="userName"
-             placeholder="Enter your username"
-             class="form-control mb-3">
-      <input type="password"
-             ngModel
-             name="userPassword"
-             id="userPassword"
-             placeholder="Enter your password"
-             class="form-control mb-3">
-      <input type="submit"
-             value="Login"
-             class="btn btn-outline-primary form-control rounded-0">
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          name="userName"
+          id="userName"
+          placeholder="Username">
+<!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>UserName</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          name="userPassword"
+          id="userPassword"
+          placeholder="Password">
+<!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>Password</mat-hint>
+      </mat-form-field>
+
+      <button
+        type="submit"
+        value="Login"
+        mat-raised-button color="primary">Primary</button>
+
+<!--      <input type="text"-->
+<!--             ngModel-->
+<!--             name="userName"-->
+<!--             id="userName"-->
+<!--             placeholder="Enter your username"-->
+<!--             class="form-control mb-3">-->
+<!--      <input type="password"-->
+<!--             ngModel-->
+<!--             name="userPassword"-->
+<!--             id="userPassword"-->
+<!--             placeholder="Enter your password"-->
+<!--             class="form-control mb-3">-->
+<!--      <input type="submit"-->
+<!--             value="Login"-->
+<!--             class="btn btn-outline-primary form-control rounded-0">-->
     </form>
 
   </div>
