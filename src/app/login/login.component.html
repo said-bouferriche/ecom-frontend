@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <div class="card">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-      <mat-form-field appearance="outline" color="accent">
+      <mat-form-field appearance="outline" class="w-100">
         <mat-label>Outline form field</mat-label>
         <input
           matInput
@@ -14,11 +14,12 @@
         <mat-hint>UserName</mat-hint>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="w-100">
         <mat-label>Outline form field</mat-label>
         <input
           matInput
           ngModel
+          type="password"
           name="userPassword"
           id="userPassword"
           placeholder="Password">
@@ -26,7 +27,7 @@
         <mat-hint>Password</mat-hint>
       </mat-form-field>
 
-      <button
+      <button class="w-100"
         type="submit"
         value="Login"
         mat-raised-button color="primary">Primary</button>

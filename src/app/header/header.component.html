@@ -13,6 +13,15 @@
   </button>
 </mat-toolbar>
 
+<mat-toolbar  *ngIf="isLoggedIn()">
+  <button routerLink="/"  mat-raised-button color="accent">
+    Home
+  </button>
+  <button *ngIf="isAdmin()" mat-raised-button routerLink="/addNewProduct" color="accent">
+    Add New Product
+  </button>
+</mat-toolbar>
+
 
 
 

@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <div class="card">
+
+    <div class="row">
+      <div class="col-6">
+        <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)" action="" method="post">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Product Name</mat-label>
+          <input matInput
+                 placeholder="ProductName"
+                 [(ngModel)]="product.productName"
+                 name="productName">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+<!--          <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Product Description</mat-label>
+          <input matInput
+                 placeholder="Product Description"
+                 [(ngModel)]="product.productDescription"
+                 name="productDescription">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+<!--          <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Product Price</mat-label>
+          <input matInput
+                 placeholder="Product Price"
+                 [(ngModel)]="product.productActualPrice"
+                  name="productActualPrice">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+<!--          <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Product Price After Discount</mat-label>
+          <input matInput
+                 placeholder="Price After Discount"
+                 [(ngModel)]="product.productDiscountedPrice"
+                 name="productDiscountedPrice">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+<!--          <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+
+        <div align="end">
+          <button type="submit" mat-raised-button color="accent">
+            Save
+          </button>
+          <button mat-raised-button color="accent">
+            Cancel
+          </button>
+        </div>
+        </form>
+
+
+
+      </div>
+
+      <div class="col-6">
+        Images Area
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

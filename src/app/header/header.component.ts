@@ -24,7 +24,17 @@ export class HeaderComponent implements OnInit {
 
   public logout(){
     this.userAuthServise.clear();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
+
+  public isAdmin(){
+    return  this.userAuthServise.isAdmin();
+  }
+
+  public isUser(){
+    return this.userAuthServise.isUser();
+  }
+
+
 
 }
