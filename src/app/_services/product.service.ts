@@ -10,7 +10,7 @@ export class ProductService {
   API_PATH = "http://localhost:9090";
   constructor(private httpClient: HttpClient) { }
 
-  public addProduct(product: Product){
+  public addProduct(product: FormData){
     return this.httpClient.post<Product>(this.API_PATH +"/addNewProduct", product);
   }
 }
