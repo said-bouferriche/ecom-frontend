@@ -55,10 +55,10 @@
 
       </div>
 
-      <div class="col-6">
+      <div class="col-6 align-content-center centering" >
         <div>
 
-          <div class="dropzone">
+          <div class="dropzone" appDrag (files)="fileDropped($event)">
             <div class="text-wrapper text-center">
               Drag and drop your file or
               <a (click)="selectFile.click()">browse</a>

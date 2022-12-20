@@ -32,3 +32,8 @@ mat-grid-tile{
   vertical-align: middle;
   cursor: pointer;
 }
+.centering{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
