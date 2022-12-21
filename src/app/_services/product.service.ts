@@ -13,4 +13,8 @@ export class ProductService {
   public addProduct(product: FormData){
     return this.httpClient.post<Product>(this.API_PATH +"/addNewProduct", product);
   }
+
+  public getAllProducts(){
+    return this.httpClient.get<Product[]>(this.API_PATH + "/getAllProducts")
+  }
 }
