@@ -1,7 +1,48 @@
-<div class="container">
-  <div class="card text-center m-0">
-    <h1>
-      this is Home
-    </h1>
-  </div>
+<div class="container mt-5">
+
+
+  <mat-grid-list cols="4" rowHeight="3:5" gutterSize="10">
+    <mat-grid-tile *ngFor="let p of productDetails">
+      <div class="row p-2">
+        <div class="image-container">
+        <img class="home-page-product-image" [src]="p.productImages[0].url">
+        </div>
+        <div>
+          <div class="mt-2">
+            <h2>{{p.productName}}</h2>
+          </div>
+          <div class="mt-2">
+            <p style="white-space: inherit; text-overflow: ellipsis; height: 80px;width: 288px; overflow: hidden">{{p.productDescription}}</p>
+          </div>
+          <div class="mt-2">
+            <p>{{p.productActualPrice}} DH {{p.productDiscountedPrice}} DH</p>
+          </div>
+          <button type="submit" mat-raised-button color="warn">
+          View Detalis
+        </button>
+        </div>
+      </div>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
 </div>
+
+
+
+
+<!--<div class="card-group">-->
+<!--  <div class="card d-flex flex-column" *ngFor="let p of productDetails">-->
+<!--    <img [src]="p.productImages[0].url" class="card-img-top " alt="...">-->
+<!--    <div class="card-body d-flex flex-column">-->
+<!--      <h5 class="card-title">{{p.productName}}</h5>-->
+<!--      <p class="card-text">{{p.productDescription | customslice:20}}</p>-->
+<!--      <p class="card-text">{{p.productActualPrice}}</p>-->
+<!--      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--      <button type="submit" class="btn btn-danger">-->
+<!--        View Detalis-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
