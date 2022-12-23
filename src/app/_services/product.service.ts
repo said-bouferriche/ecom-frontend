@@ -22,4 +22,9 @@ export class ProductService {
     return this.httpClient.delete(this.API_PATH + "/deleteProductDetails/" + productId)
   }
 
+  public getProductDetailsById(productId: number){
+    return this.httpClient.get<Product>(this.API_PATH + "/getProductDetailsById/" + productId)
+
+  }
+
 }

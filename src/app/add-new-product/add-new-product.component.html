@@ -42,7 +42,10 @@
         </mat-form-field>
 
         <div align="end">
-          <button type="submit" mat-raised-button color="accent">
+          <button *ngIf="isNewProduct" type="submit" mat-raised-button color="accent">
+            Add Product
+          </button>
+          <button  *ngIf="!isNewProduct" type="submit" mat-raised-button color="accent">
             Save
           </button>
           <button mat-raised-button color="accent">
