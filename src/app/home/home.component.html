@@ -17,7 +17,7 @@
           <div class="mt-2">
             <p>{{p.productActualPrice}} DH {{p.productDiscountedPrice}} DH</p>
           </div>
-          <button type="submit" mat-raised-button color="warn">
+          <button (click)="showProductDetails(p.productId)" type="submit" mat-raised-button color="warn">
           View Detalis
         </button>
         </div>
