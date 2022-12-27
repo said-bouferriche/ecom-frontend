@@ -30,6 +30,7 @@ import {ShowProductImagesDialogComponent} from './show-product-images-dialog/sho
 import {MatDialogModule} from '@angular/material/dialog';
 import {homeSlice} from "./home/home.pipe";
 import { ProductViewDetailsComponent } from './product-view-details/product-view-details.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProductViewDetailsComponent } from './product-view-details/product-view
     ShowProductDetailsComponent,
     ShowProductImagesDialogComponent,
     homeSlice,
-    ProductViewDetailsComponent
+    ProductViewDetailsComponent,
+    BuyProductComponent
   ],
   imports: [
     BrowserModule,

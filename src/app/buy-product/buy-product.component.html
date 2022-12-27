@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)" action="" method="post">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Full Name</mat-label>
+          <!-- the name should be the same as backend                -->
+          <input matInput
+                 placeholder="Full name"
+                 [(ngModel)]="orderDetails.fullName"
+                 name="fullName">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Full Addresse</mat-label>
+          <input matInput
+                 placeholder="Full Addresse"
+                 [(ngModel)]="orderDetails.fullAddress"
+                 name="fullAddresse">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>contact Number</mat-label>
+          <input matInput
+                 placeholder="contact Number"
+                 [(ngModel)]="orderDetails.contactNumber"
+                 name="contactNumber">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>alternate Contact Number</mat-label>
+          <input matInput
+                 placeholder="alternate Contact Number"
+                 [(ngModel)]="orderDetails.alternateContactNumber"
+                 name="alternateContactNumber">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <div class="mt-5">
+          <button mat-raised-button class="float-end" color="warn">Buy Now </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-6">
+      <div class="product-information">
+        <table>
+          <thead>
+
+          </thead>
+
+          <tbody>
+
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
