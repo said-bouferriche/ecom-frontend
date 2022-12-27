@@ -1,0 +1,61 @@
+
+<div class="container mt-5">
+  <div class="card">
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          name="userName"
+          id="userName"
+          placeholder="Username">
+        <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>UserName</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          name="userFirstName"
+          id="userFirstName"
+          placeholder="User first name">
+        <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>User First Name</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          name="userLastName"
+          id="userLastName"
+          placeholder="user Last Name">
+        <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>UserName</mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Outline form field</mat-label>
+        <input
+          matInput
+          ngModel
+          type="password"
+          name="userPassword"
+          id="userPassword"
+          placeholder="Password">
+        <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        <mat-hint>Password</mat-hint>
+      </mat-form-field>
+
+      <button class="align-content-center"
+              type="submit"
+              value="Login"
+              mat-raised-button color="primary">register</button>
+    </form>
+  </div>
+</div>

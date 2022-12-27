@@ -46,13 +46,45 @@
     </div>
     <div class="col-6">
       <div class="product-information">
-        <table>
-          <thead>
-
+        <table class="table table-hover">
+          <thead class="">
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
           </thead>
 
-          <tbody>
+          <tbody >
+          <tr *ngFor="let product of productDetails">
+            <td>
+              {{product.productName}}
+            </td>
+            <td>
+              {{product.productDiscountedPrice}}
+            </td>
+            <td>
+              <select class="form-select"
+                      #quantity
+                      [ngModel]="getQuantityForProduct(product.productId)"
+                      (change)="onQuantityChanged(quantity.value, product.productId)">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </td>
+            <td>
+              {{getCalculatedTotal(product.productId, product.productDiscountedPrice)}}
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{getCalculatedTotalPrice()}}</td>
 
+
+          </tr>
 
           </tbody>
         </table>

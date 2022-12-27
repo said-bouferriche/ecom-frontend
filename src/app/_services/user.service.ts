@@ -34,6 +34,11 @@ export class UserService {
     });
   }
 
+  public register(registerData){
+    return this.httpclient.post(this.API_PATH + "/registerNewUser", registerData)
+
+  }
+
 
 
   // @ts-ignore
