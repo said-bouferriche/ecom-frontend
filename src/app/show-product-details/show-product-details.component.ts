@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./show-product-details.component.css']
 })
 export class ShowProductDetailsComponent implements OnInit {
-
+  pageNumber:number=0;
   productDetails: Product[] = [];
   displayedColumns: string[] = ['productId', 'productName', 'description',
     'productActualPrice','productDiscountedPrice','Actions'];
@@ -30,7 +30,7 @@ export class ShowProductDetailsComponent implements OnInit {
   }
 
   public getAllProducts(){
-    this.productService.getAllProducts().pipe(
+    this.productService.getAllProducts(this.pageNumber).pipe(
       map((x:Product[], i)=>x.map((product: Product)=>
         this.imageProcessingService.createImages(product)))
     ).subscribe(
