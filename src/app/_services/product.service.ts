@@ -15,8 +15,8 @@ export class ProductService {
     return this.httpClient.post<Product>(this.API_PATH +"/addNewProduct", product);
   }
 
-  public getAllProducts(pageNumber){
-    return this.httpClient.get<Product[]>(this.API_PATH + "/getAllProducts?pageNumber="+pageNumber)
+  public getAllProducts(pageNumber, searchKey=""){
+    return this.httpClient.get<Product[]>(this.API_PATH + "/getAllProducts?pageNumber="+pageNumber+"&searchKey="+ searchKey)
   }
 
   public deleteProduct(productId: number){

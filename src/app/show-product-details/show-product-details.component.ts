@@ -14,10 +14,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./show-product-details.component.css']
 })
 export class ShowProductDetailsComponent implements OnInit {
+  showLoadButton = true;
   pageNumber:number=0;
   productDetails: Product[] = [];
   displayedColumns: string[] = ['productId', 'productName', 'description',
     'productActualPrice','productDiscountedPrice','Actions'];
+  showTable = true;
 
   constructor(private productService:ProductService,
               private dialog:MatDialog,
@@ -29,14 +31,31 @@ export class ShowProductDetailsComponent implements OnInit {
     // this.showImages();
   }
 
-  public getAllProducts(){
-    this.productService.getAllProducts(this.pageNumber).pipe(
+  public getAllProducts(searchKey:string = ""){
+    this.showTable = false;
+    this.productService.getAllProducts(this.pageNumber, searchKey).pipe(
       map((x:Product[], i)=>x.map((product: Product)=>
         this.imageProcessingService.createImages(product)))
     ).subscribe(
       (res:Product[])=>{
-        this.productDetails = res;
-        console.log(res);
+        this.showTable = true;
+
+
+        res.forEach(p=>{
+          this.productDetails.push(p);
+        })
+
+
+        if(this.productDetails.length == 7){
+          this.showLoadButton = false;
+        }else {
+          this.showLoadButton = true;
+        }
+
+
+        //
+        // this.productDetails = res;
+        // console.log(res);
       },(error:HttpErrorResponse)=>{
         console.log(error);
     }
@@ -67,5 +86,17 @@ export class ShowProductDetailsComponent implements OnInit {
 
   editProductDetails(productId: number) {
     this.router.navigate(["/addNewProduct", {productId: productId}])
+  }
+
+  loadMoreProducts() {
+    this.pageNumber = this.pageNumber + 1;
+    this.getAllProducts();
+  }
+
+  searchByKeyword(searchKeyword) {
+    console.log(searchKeyword);
+    this.pageNumber = 0;
+    this.productDetails = [];
+    this.getAllProducts(searchKeyword);
   }
 }

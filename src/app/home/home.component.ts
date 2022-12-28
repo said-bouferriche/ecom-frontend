@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
     this.getAllProducts();
   }
 
-  public getAllProducts(){
-    this.productService.getAllProducts(this.pageNumber).pipe(
+  public getAllProducts(searchKey:string = ""){
+    this.productService.getAllProducts(this.pageNumber, searchKey).pipe(
       map((x:Product[], i)=>x.map((product: Product)=>
         this.imageProcessingService.createImages(product)))
     ).subscribe(
@@ -53,5 +53,12 @@ export class HomeComponent implements OnInit {
   loadMoreProducts() {
     this.pageNumber = this.pageNumber +1;
     this.getAllProducts();
+  }
+
+  searchByKeyword(searchKeyword) {
+    console.log(searchKeyword);
+    this.pageNumber = 0;
+    this.productDetails = [];
+    this.getAllProducts(searchKeyword);
   }
 }

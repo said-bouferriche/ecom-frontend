@@ -1,6 +1,16 @@
 <div class="container mt-5">
 
 
+  <mat-form-field appearance="outline" class="w-25 ">
+    <mat-label>Search for products</mat-label>
+    <input matInput
+           #searchKeyword
+           (keyup)="searchByKeyword(searchKeyword.value)"
+           placeholder="Search"
+           id="searchKey"
+           name="searchKey">
+  </mat-form-field>
+
   <mat-grid-list cols="4" rowHeight="3:5" gutterSize="10">
     <mat-grid-tile *ngFor="let p of productDetails">
       <div class="row p-2">
