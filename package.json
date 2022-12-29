@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "clean": "npm cache clean\n rm -rf node_modules",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

@@ -28,4 +28,8 @@ export class ProductViewDetailsComponent implements OnInit {
       isSingleProductCheckout:true,
       id:productId}]);
   }
+
+  addToCart(productId: number) {
+    
+  }
 }
