@@ -1,12 +1,16 @@
 #stage 1
-FROM node:14.21.1-alpine as node
+FROM node:14.2.0-alpine3.11 as build
 WORKDIR /app
-COPY . .
+
+RUN npm install -g @angular/cli
+
+COPY ./package.json .
 RUN npm install
-RUN npm run build --prod
-#stage 2
-FROM nginx:1.17.1-alpine
-COPY --from=node /app/dist/demo-app /usr/share/nginx/html
+COPY . .
+RUN ng build
+
+FROM nginx as runtime
+COPY --from=build /app/dist/ecom-pro-front /usr/share/nginx/html
 
 
 
